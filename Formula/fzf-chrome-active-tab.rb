@@ -1,7 +1,7 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-class FzfCrhomeActiveTab < Formula
+class FzfChromeActiveTab < Formula
   desc ""
   homepage ""
   url "https://github.com/Rasukarusan/fzf-chrome-active-tab/releases/download/0.03/chrome-tab-activate"
