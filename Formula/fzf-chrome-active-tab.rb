@@ -4,8 +4,8 @@
 class FzfCrhomeActiveTab < Formula
   desc ""
   homepage ""
-  url "https://github.com/Rasukarusan/fzf-crhome-active-tab/releases/download/0.02/chrome-tab-activate"
-  sha256 "21ae3a6008a1f38281761660fda1976b367560c88e835ae082d181334e83faf0"
+  url "https://github.com/Rasukarusan/fzf-crhome-active-tab/releases/download/0.03/chrome-tab-activate"
+  sha256 "99974c87d7e67d83f0f9128710e170a99a237fe67a0abdfa2e657e94be8eb93d"
   def install
     bin.install "chrome-tab-activate"
   end
