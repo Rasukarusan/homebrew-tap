@@ -4,6 +4,12 @@ on:
     types: [released]
 jobs:
   myEvent:
+    env:
+      SHA256:${{ github.event.client_payload.sha256 }}
+      BINARY:${{ github.event.client_payload.binary }}
+      CLASS:${{ github.event.client_payload.class }}
+      URL:${{ github.event.client_payload.url }}
+      REF:${{ github.event.client_payload.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,6 +21,21 @@ jobs:
         run: |
           echo ${{ github.event.client_payload.sha256 }}
           echo ${{ github.event.client_payload.binary }}
+          echo ${{ github.event.client_payload.class }}
           echo ${{ github.event.client_payload.url }}
-          echo ${{ github.event.client_payload.desc }}
           echo ${{ github.event.client_payload.ref }}
+      - name: Dump Values
+        run: |
+          data=$(cat <<EOF
+            class $CLASS < Formula
+              url "$URL"
+              sha256 "$SHA256"
+
+              def install
+                bin.install "$BINARY"
+              end
+            end
+
+          EOF
+          )
+          echo "$data"
