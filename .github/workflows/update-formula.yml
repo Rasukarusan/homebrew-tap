@@ -6,7 +6,15 @@ jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+          fetch-depth: 0
+
+      - name: Dump Values
+      - run: |
+        echo ${{ github.event.client_payload.sha256 }}
+        echo ${{ github.event.client_payload.binary }}
+        echo ${{ github.event.client_payload.url }}
+        echo ${{ github.event.client_payload.desc }}
+        echo ${{ github.event.client_payload.ref }}
