@@ -20,3 +20,4 @@ There are demo.gif in each repository.
 ## Articles
 
 [【備忘録】Homebrewで自作ツールを配布する](https://www.rasukarusan.com/entry/2019/11/03/211338)
+[GithubActionsでリリースとFormulaリポジトリの更新を自動化した](https://www.rasukarusan.com/entry/2021/01/20/214432)
